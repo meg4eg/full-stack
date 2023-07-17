@@ -72,6 +72,8 @@ function phone_formatting($phone) {
 }
 
 function paginator($total, $offset, $q, $path, &$out) {
+	if (!str_contains($path, '?')) $path .= '?';
+
     if ($total > $q) {
         $m = 0;
         // digital links
